@@ -1,6 +1,5 @@
-import 'package:coffee/constents.dart';
 import 'package:coffee/core/app_router.dart';
-import 'package:coffee/featuers/Intro/view/intro_view.dart';
+import 'package:coffee/core/theme/dark_light_themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +15,7 @@ class CoffeeApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: ColorPallete.backgroundColor,
-      ),
+      theme: lightTheme,
     );
   }
 }
