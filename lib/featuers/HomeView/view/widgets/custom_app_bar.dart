@@ -5,20 +5,33 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Image(
-          image: AssetImage('assets/images/cup.png'),
-          width: 20,
-          height: 20,
-          fit: BoxFit.contain,
-        ),
-        Icon(
-          Icons.toggle_off,
-          size: 20,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Image(
+            image: AssetImage('assets/images/cup.png'),
+            width: 40,
+            height: 40,
+            fit: BoxFit.contain,
+          ),
+          Container(
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(.3),
+                borderRadius: BorderRadius.circular(12)),
+            child: IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: () {},
+              icon: Icon(
+                Icons.toggle_off,
+                size: 40,
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

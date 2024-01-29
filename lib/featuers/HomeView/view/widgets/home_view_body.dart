@@ -1,4 +1,7 @@
+import 'package:coffee/core/text_style.dart';
 import 'package:coffee/featuers/HomeView/view/widgets/custom_app_bar.dart';
+import 'package:coffee/featuers/HomeView/view/widgets/product_item.dart';
+import 'package:coffee/featuers/HomeView/view/widgets/product_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -6,12 +9,26 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomAppBar(),
+            const CustomAppBar(),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              'A cup that can make your day!',
+              style: Styles.titleStyle18.copyWith(
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const Expanded(child: ProductsList()),
           ],
         ),
       ),
