@@ -11,44 +11,35 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40),
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Theme.of(context).colorScheme.primary,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: ListTile(
-                title: Text(
-                  product.title,
-                  style: Styles.titleStyle18,
-                ),
-                subtitle: Text(
-                  '${product.price}' r" $",
-                  style: Styles.subTitleStyle16,
-                ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: icon,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: -35,
-            left: 170,
-            child: Image.asset(
+      padding: const EdgeInsets.only(top: 24),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 0),
+          child: ListTile(
+            leading: Image.asset(
               product.productPicture,
               width: 60,
               height: 60,
               fit: BoxFit.cover,
             ),
+            title: Text(
+              product.title,
+              style: Styles.titleStyle18,
+            ),
+            subtitle: Text(
+              '${product.price}' r" $",
+              style: Styles.subTitleStyle16,
+            ),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: icon,
+            ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -22,3 +22,5 @@ List<ProductModel> productsData = [
     price: 55,
   ),
 ];
+
+List<ProductModel> shopCart = [];

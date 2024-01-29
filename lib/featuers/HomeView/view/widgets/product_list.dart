@@ -8,6 +8,7 @@ class ProductsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: productsData.length,
         itemBuilder: (context, index) {
           return ProductItem(
