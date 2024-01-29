@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductModel product;
+  final Icon icon;
 
-  const ProductItem({super.key, required this.product});
+  const ProductItem({super.key, required this.product, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 35),
+      padding: const EdgeInsets.only(top: 40),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -32,21 +33,18 @@ class ProductItem extends StatelessWidget {
                 ),
                 trailing: IconButton(
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
+                  icon: icon,
                 ),
               ),
             ),
           ),
           Positioned(
             top: -35,
-            left: 160,
+            left: 170,
             child: Image.asset(
               product.productPicture,
-              width: 70,
-              height: 70,
+              width: 60,
+              height: 60,
               fit: BoxFit.cover,
             ),
           ),

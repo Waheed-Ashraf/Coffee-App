@@ -12,6 +12,10 @@ class ProductsList extends StatelessWidget {
         itemBuilder: (context, index) {
           return ProductItem(
             product: productsData[index],
+            icon: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
           );
         });
   }
