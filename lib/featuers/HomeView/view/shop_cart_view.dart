@@ -1,5 +1,8 @@
 import 'package:coffee/core/text_style.dart';
+import 'package:coffee/featuers/HomeView/manager/shop_cart_cubit/shop_cart_cubit.dart';
+import 'package:coffee/featuers/HomeView/view/widgets/shop_cart_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ShopCartView extends StatelessWidget {
   const ShopCartView({super.key});
@@ -8,28 +11,6 @@ class ShopCartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(child: ShopCartBody()),
-    );
-  }
-}
-
-class ShopCartBody extends StatelessWidget {
-  const ShopCartBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 64,
-          ),
-          Text(
-            'Your Cart : ',
-            style: Styles.titleStyle18,
-          ),
-        ],
-      ),
     );
   }
 }

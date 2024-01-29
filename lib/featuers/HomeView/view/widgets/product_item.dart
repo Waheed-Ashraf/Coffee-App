@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 class ProductItem extends StatelessWidget {
   final ProductModel product;
   final Icon icon;
+  final void Function() onPressed;
 
-  const ProductItem({super.key, required this.product, required this.icon});
+  const ProductItem(
+      {super.key,
+      required this.product,
+      required this.icon,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class ProductItem extends StatelessWidget {
               style: Styles.subTitleStyle16,
             ),
             trailing: IconButton(
-              onPressed: () {},
+              onPressed: onPressed,
               icon: icon,
             ),
           ),

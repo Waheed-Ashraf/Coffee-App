@@ -1,6 +1,9 @@
 import 'package:bloc/bloc.dart';
 
 
+import 'package:coffee/featuers/HomeView/data/ProductsDataSource/products_data.dart';
+
+
 import 'package:coffee/featuers/HomeView/data/product_model.dart';
 
 
@@ -18,10 +21,19 @@ class ShopCartCubit extends Cubit<ShopCartState> {
   ProductModel? product;
 
 
-  List<ProductModel> shopCart = [];
+  void addProduct(product) {
+
+    shopCart.add(product);
+
+    emit(ShopCartfill());
+
+  }
 
 
-  void checkList(shopCart) {
+  void removeProduct(product) {
+
+    shopCart.remove(product);
+
 
     if (shopCart.isEmpty) {
 
@@ -32,20 +44,6 @@ class ShopCartCubit extends Cubit<ShopCartState> {
       emit(ShopCartfill());
 
     }
-
-  }
-
-
-  void addProduct(product) {
-
-    shopCart.add(product);
-
-  }
-
-
-  void removeProduct(product) {
-
-    shopCart.remove(product);
 
   }
 

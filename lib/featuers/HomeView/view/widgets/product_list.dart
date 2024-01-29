@@ -1,6 +1,8 @@
 import 'package:coffee/featuers/HomeView/data/ProductsDataSource/products_data.dart';
+import 'package:coffee/featuers/HomeView/manager/shop_cart_cubit/shop_cart_cubit.dart';
 import 'package:coffee/featuers/HomeView/view/widgets/product_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsList extends StatelessWidget {
   const ProductsList({super.key});
@@ -17,6 +19,10 @@ class ProductsList extends StatelessWidget {
               Icons.add,
               color: Colors.white,
             ),
+            onPressed: () {
+              BlocProvider.of<ShopCartCubit>(context)
+                  .addProduct(productsData[index]);
+            },
           );
         });
   }
