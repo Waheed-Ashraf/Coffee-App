@@ -18,22 +18,51 @@ class ShopCartCubit extends Cubit<ShopCartState> {
   ShopCartCubit() : super(ShopCartInitial());
 
 
-  ProductModel? product;
+  void CheckCart() {
 
+    if (shopCart.isEmpty) {
 
-  void addProduct(product) {
+      emit(ShopCartEmpty());
 
-    shopCart.add(product);
+    } else {
 
-    emit(ShopCartfill());
+      emit(ShopCartfill());
+
+    }
 
   }
 
 
-  void removeProduct(product) {
+  void addProduct(ProductModel product) {
+
+    if (product.quantity == product.quant) {
+
+      product.quantity += 1;
+
+
+      product.quant += 1;
+
+
+      emit(ShopCartfill());
+
+    } else {
+
+      product.quantity += 1;
+
+
+      shopCart.add(product);
+
+
+      emit(ShopCartfill());
+
+    }
+
+  }
+
+
+  void removeProduct(ProductModel product) {
 
     shopCart.remove(product);
-
 
     if (shopCart.isEmpty) {
 

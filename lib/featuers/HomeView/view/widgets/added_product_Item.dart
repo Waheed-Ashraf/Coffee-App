@@ -2,12 +2,12 @@ import 'package:coffee/core/text_style.dart';
 import 'package:coffee/featuers/HomeView/data/product_model.dart';
 import 'package:flutter/material.dart';
 
-class ProductItem extends StatelessWidget {
+class AddedProductItem extends StatelessWidget {
   final ProductModel product;
   final Icon icon;
   final void Function() onPressed;
 
-  const ProductItem(
+  const AddedProductItem(
       {super.key,
       required this.product,
       required this.icon,
@@ -38,11 +38,15 @@ class ProductItem extends StatelessWidget {
             subtitle: Row(
               children: [
                 Text(
-                  '${product.price}' r" $",
+                  '${product.price * product.quantity}' r" $",
                   style: Styles.subTitleStyle16,
                 ),
                 const SizedBox(
                   width: 10,
+                ),
+                Text(
+                  "${product.quantity}",
+                  style: Styles.subTitleStyle16,
                 ),
               ],
             ),

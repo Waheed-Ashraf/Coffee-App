@@ -15,7 +15,7 @@ class CoffeeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ShopCartCubit(),
+      create: (context) => ShopCartCubit()..CheckCart(),
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,

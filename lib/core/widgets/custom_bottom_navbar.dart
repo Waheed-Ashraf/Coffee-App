@@ -21,15 +21,13 @@ class CustomBottomNavBar extends StatelessWidget {
           tabBackgroundColor: Colors.grey.shade300,
           tabBorderRadius: 16,
           tabActiveBorder: Border.all(color: Colors.white),
-          tabs: [
+          tabs: const [
             GButton(
               icon: Icons.home,
-              iconColor: Theme.of(context).colorScheme.inversePrimary,
               text: 'home',
             ),
             GButton(
               icon: Icons.shopping_bag,
-              iconColor: Theme.of(context).colorScheme.inversePrimary,
               text: 'cart',
             ),
           ]),
