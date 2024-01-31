@@ -44,7 +44,10 @@ class ProductItem extends StatelessWidget {
             ),
             trailing: IconButton(
               onPressed: onPressed,
-              icon: const Icon(Icons.add),
+              icon: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

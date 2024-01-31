@@ -4,14 +4,11 @@ import 'package:flutter/material.dart';
 
 class AddedProductItem extends StatelessWidget {
   final ProductModel product;
-  final Icon icon;
-  final void Function() onPressed;
 
-  const AddedProductItem(
-      {super.key,
-      required this.product,
-      required this.icon,
-      required this.onPressed});
+  const AddedProductItem({
+    super.key,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,24 +32,13 @@ class AddedProductItem extends StatelessWidget {
               product.title,
               style: Styles.titleStyle18,
             ),
-            subtitle: Row(
-              children: [
-                Text(
-                  '${product.price * product.quantity}' r" $",
-                  style: Styles.subTitleStyle16,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "${product.quantity}",
-                  style: Styles.subTitleStyle16,
-                ),
-              ],
+            subtitle: Text(
+              '${product.price * product.quantity}' r" $",
+              style: Styles.subTitleStyle16,
             ),
-            trailing: IconButton(
-              onPressed: onPressed,
-              icon: icon,
+            trailing: Text(
+              "${product.quantity}",
+              style: Styles.subTitleStyle16,
             ),
           ),
         ),

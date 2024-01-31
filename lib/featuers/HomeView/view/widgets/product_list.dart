@@ -1,3 +1,4 @@
+import 'package:coffee/core/widgets/snak_bar.dart';
 import 'package:coffee/featuers/HomeView/data/ProductsDataSource/products_data.dart';
 import 'package:coffee/featuers/HomeView/manager/shop_cart_cubit/shop_cart_cubit.dart';
 import 'package:coffee/featuers/HomeView/view/widgets/product_item.dart';
@@ -16,6 +17,8 @@ class ProductsList extends StatelessWidget {
           return ProductItem(
             product: productsData[index],
             onPressed: () {
+              showSnackBar(context,
+                  color: Colors.green, message: 'Product Added');
               productsData[index].quantity += 1;
               BlocProvider.of<ShopCartCubit>(context)
                   .addProduct(productsData[index]);

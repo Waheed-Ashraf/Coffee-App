@@ -1,4 +1,7 @@
+import 'package:coffee/core/theme/dark_light_themes.dart';
+import 'package:coffee/featuers/HomeView/manager/themes_cubit/themes_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -22,11 +25,25 @@ class CustomAppBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12)),
             child: IconButton(
               padding: EdgeInsets.zero,
-              onPressed: () {},
-              icon: Icon(
-                Icons.toggle_off,
-                size: 40,
-                color: Theme.of(context).colorScheme.inversePrimary,
+              onPressed: () {
+                BlocProvider.of<ThemesCubit>(context).toggleTheme();
+              },
+              icon: BlocBuilder<ThemesCubit, ThemesState>(
+                builder: (context, state) {
+                  if (state.theme == darkTheme) {
+                    return Icon(
+                      Icons.toggle_off,
+                      size: 40,
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    );
+                  } else {
+                    return Icon(
+                      Icons.toggle_on,
+                      size: 40,
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    );
+                  }
+                },
               ),
             ),
           )
