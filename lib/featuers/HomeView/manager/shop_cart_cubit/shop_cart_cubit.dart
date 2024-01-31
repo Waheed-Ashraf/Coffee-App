@@ -1,14 +1,10 @@
 import 'package:bloc/bloc.dart';
 
-
 import 'package:coffee/featuers/HomeView/data/ProductsDataSource/products_data.dart';
-
 
 import 'package:coffee/featuers/HomeView/data/product_model.dart';
 
-
 import 'package:flutter/material.dart';
-
 
 part 'shop_cart_state.dart';
 
@@ -63,6 +59,7 @@ class ShopCartCubit extends Cubit<ShopCartState> {
   void removeProduct(ProductModel product) {
 
     shopCart.remove(product);
+
 
     if (shopCart.isEmpty) {
 
