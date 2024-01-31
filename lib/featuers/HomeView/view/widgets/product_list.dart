@@ -15,11 +15,8 @@ class ProductsList extends StatelessWidget {
         itemBuilder: (context, index) {
           return ProductItem(
             product: productsData[index],
-            icon: const Icon(
-              Icons.add,
-              color: Colors.white,
-            ),
             onPressed: () {
+              productsData[index].quantity += 1;
               BlocProvider.of<ShopCartCubit>(context)
                   .addProduct(productsData[index]);
             },

@@ -8,70 +8,35 @@ import 'package:flutter/material.dart';
 
 part 'shop_cart_state.dart';
 
-
 class ShopCartCubit extends Cubit<ShopCartState> {
-
   ShopCartCubit() : super(ShopCartInitial());
 
-
   void CheckCart() {
-
     if (shopCart.isEmpty) {
-
       emit(ShopCartEmpty());
-
     } else {
-
       emit(ShopCartfill());
-
     }
-
   }
-
 
   void addProduct(ProductModel product) {
-
-    if (product.quantity == product.quant) {
-
-      product.quantity += 1;
-
-
-      product.quant += 1;
-
-
-      emit(ShopCartfill());
-
-    } else {
-
-      product.quantity += 1;
-
-
+    if (product.quantity == 1) {
       shopCart.add(product);
 
-
       emit(ShopCartfill());
-
+    } else {
+      emit(ShopCartfill());
     }
-
   }
-
 
   void removeProduct(ProductModel product) {
-
     shopCart.remove(product);
-
+    product.quantity = 0;
 
     if (shopCart.isEmpty) {
-
       emit(ShopCartEmpty());
-
     } else {
-
       emit(ShopCartfill());
-
     }
-
   }
-
 }
-

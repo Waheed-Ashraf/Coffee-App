@@ -4,7 +4,6 @@ import 'package:coffee/core/widgets/grediant_button.dart';
 import 'package:coffee/featuers/HomeView/data/ProductsDataSource/products_data.dart';
 import 'package:coffee/featuers/HomeView/manager/shop_cart_cubit/shop_cart_cubit.dart';
 import 'package:coffee/featuers/HomeView/view/widgets/added_product_Item.dart';
-import 'package:coffee/featuers/HomeView/view/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
